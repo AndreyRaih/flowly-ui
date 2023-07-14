@@ -35,13 +35,15 @@ git clone https://github.com/yourusername/flowly-ui.git
 yarn
 ```
 
-3. Запустите проект:
+3. Для запуска проекта:
 
 ```
 yarn dev
 ```
 
-## Общие Требования
+4. Для локальной разработки `App.tsx` используется в качестве стенда
+
+## Общие требования
 
 1. Не добавлять зависимостей без согласования с командой
 2. Для работы с цветами используем extented переменные из `tailwind.config.js`: `accent`, `primary`, `secondary`. Если вам нужен новый цвет, добавьте его в `tailwind.config.js` и согласуйте с командой. Для добавления новых цветов руководствуемся [Color Picker](https://tailwindcss.com/docs/customizing-colors#color-picker)
