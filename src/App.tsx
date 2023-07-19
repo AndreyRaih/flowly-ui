@@ -1,4 +1,4 @@
-import { ListComponent, ChartComponent, MoneyBackComponent, ReviewsComponent, PlanPickerComponent } from "./tasks";
+import { ListComponent, ChartComponent, MoneyBackComponent, ReviewsComponent, PlanPickerComponent, ProgressBarComponent, LoaderComponent, LoaderSetComponent, RatingComponent } from "./tasks";
 
 export function App() {
   return (
@@ -8,6 +8,10 @@ export function App() {
       <MoneyBackComponent />
       <ReviewsComponent />
       <PlanPickerComponent />
+      <ProgressBarComponent />
+      <LoaderComponent />
+      <LoaderSetComponent />
+      <RatingComponent />
     </main>
   );
 }
