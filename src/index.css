@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  html {
+    font-family: SF Pro Display, sans-serif;
+    @apply leading-5 text-gray-850;
+  }
+}

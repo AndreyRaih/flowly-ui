@@ -1,13 +1,21 @@
 module.exports = {
-  content: ["./src/**/*.{js,ts,jsx,tsx}"],
+  content: ['./src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
       colors: {
         primary: '#EF4444',
         secondary: '#E7D0AF',
-        accent: '#FFA230'
-      }
+        accent: '#FFA230',
+        gray: {
+          850: '#111111',
+        },
+      },
     },
   },
-  plugins: [require('tailwindcss-animated'), require("@tailwindcss/typography"), require("prettier-plugin-tailwindcss"), require("tailwindcss-safe-area")],
+  plugins: [
+    require('tailwindcss-animated'),
+    require('@tailwindcss/typography'),
+    require('prettier-plugin-tailwindcss'),
+    require('tailwindcss-safe-area'),
+  ],
 };

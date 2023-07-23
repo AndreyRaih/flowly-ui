@@ -1,0 +1,19 @@
+.container {
+  @apply flex flex-col gap-6;
+}
+
+.title {
+  @apply text-center text-3xl font-bold leading-8;
+}
+
+.list {
+  @apply flex flex-col gap-4;
+}
+
+.item {
+  @apply flex items-center;
+}
+
+.icon {
+  @apply mr-4 flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full;
+}
