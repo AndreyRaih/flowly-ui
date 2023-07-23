@@ -1,6 +1,6 @@
-export type ListIcon = 'app' | 'shirt' | 'wear' | 'comment' | 'bag';
+export type ListItemIcon = 'app' | 'shirt' | 'wear' | 'comment' | 'bag';
 
-export type ItemProps = {
+export type ListItemProps = {
   icon: {
     color: string;
     type: ListIcon;

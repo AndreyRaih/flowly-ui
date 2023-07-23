@@ -1,5 +1,4 @@
 import {
-  ListComponent,
   ChartComponent,
   MoneyBackComponent,
   ReviewsComponent,
@@ -10,8 +9,10 @@ import {
   RatingComponent,
 } from './tasks';
 
+import { ListComponent, ListItemProps } from './tasks';
+
 export function App() {
-  const listItems = [
+  const listItems: ListItemProps[] = [
     {
       icon: {
         type: 'app',
