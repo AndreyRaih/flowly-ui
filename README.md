@@ -25,7 +25,24 @@
 - [Vite](https://vitejs.dev/guide/)
 - [Yarn](https://classic.yarnpkg.com/en/docs)
 ### Кодстайл
-- [Prettier](https://prettier.io/docs/en/)
+- [eslint](https://eslint.org/)
+
+Инструкция для форматирования кода в **VS code**:
+
+Добавьте следующие настройки в общие настройки (user settings json) или настройки проекта (workspace settings json): 
+
+```
+  "eslint.format.enable": true,
+  "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+```
+
+Теперь в качестве форматтера будет использоваться eslint с правилами из конфига `.eslintrc.cjs`. 
+
+Если вы хотите, чтобы код автоматически форматировался при сохранении, то добавьте настройку.
+
+```
+  "editor.formatOnSave": true
+```
 
 ## Установка и запуск в режиме разработки
 
