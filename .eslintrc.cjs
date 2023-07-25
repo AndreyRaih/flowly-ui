@@ -26,7 +26,6 @@ module.exports = {
      * Base code style rules
      */
     'no-multi-spaces': 'error',
-    'indent': [ 'error', 2 ],
     'curly': [ 'warn' ],
     'quotes': [ 'warn', 'single' ],
     'semi': [ 'warn', 'always' ],
@@ -41,6 +40,10 @@ module.exports = {
       },
     ],
     'object-curly-spacing': [ 'warn', 'always' ],
+
+    // no need to use these rules for typescript
+    'no-undef': 'off',
+    'indent': 'off',
 
     /**
      * Code quality rules
@@ -61,6 +64,7 @@ module.exports = {
     /**
      * Typescript
     */
+    '@typescript-eslint/indent': ['error', 2],
     '@typescript-eslint/no-var-requires': 'off',
     '@typescript-eslint/no-empty-function': 'off',
     '@typescript-eslint/interface-name-prefix': 'off',
