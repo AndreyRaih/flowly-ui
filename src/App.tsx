@@ -1,8 +1,18 @@
-import { ListComponent, ChartComponent, MoneyBackComponent, ReviewsComponent, PlanPickerComponent, ProgressBarComponent, LoaderComponent, LoaderSetComponent, RatingComponent } from "./tasks";
+import {
+  ListComponent,
+  ChartComponent,
+  MoneyBackComponent,
+  ReviewsComponent,
+  PlanPickerComponent,
+  ProgressBarComponent,
+  LoaderComponent,
+  LoaderSetComponent,
+  RatingComponent,
+} from './tasks';
 
 export function App() {
   return (
-    <main className="h-screen bg-gradient-to-b from-white to-gray-100 touch-pan-y overflow-x-hidden flex-column items-center justify-center">
+    <main className="h-screen touch-pan-y overflow-x-hidden flex flex-column items-center justify-center m-auto px-5">
       <ListComponent />
       <ChartComponent />
       <MoneyBackComponent />
