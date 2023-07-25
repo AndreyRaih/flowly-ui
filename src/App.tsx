@@ -1,3 +1,4 @@
+import { list } from './data';
 import {
   ListComponent,
   ChartComponent,
@@ -13,7 +14,7 @@ import {
 export function App() {
   return (
     <main className="h-screen touch-pan-y overflow-x-hidden flex flex-column items-center justify-center m-auto px-5">
-      <ListComponent />
+      <ListComponent title={list.title} items={list.items as any} />
       <ChartComponent />
       <MoneyBackComponent />
       <ReviewsComponent />
@@ -21,7 +22,7 @@ export function App() {
       <ProgressBarComponent />
       <LoaderComponent />
       <LoaderSetComponent />
-      <RatingComponent />
+      <RatingComponent /> 
     </main>
   );
 }
