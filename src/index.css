@@ -19,10 +19,6 @@
     @apply text-gray-800;
   }
 
-  main {
-    max-width: 375px;
-  }
-
   #app {
     @apply bg-gradient-to-r from-white to-gray-200;
   }

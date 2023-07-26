@@ -22,6 +22,7 @@
     "*.tsx": "eslint --fix"
   },
   "dependencies": {
+    "@preact/signals": "^1.1.5",
     "chart.js": "^4.3.0",
     "date-fns": "^2.30.0",
     "preact": "^10.11.3"
