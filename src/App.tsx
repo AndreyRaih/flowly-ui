@@ -5,7 +5,7 @@ import {
   ChartComponent,
   MoneyBackComponent,
   ReviewsComponent,
-  PlanPickerComponent,
+  PlanPicker,
   ProgressBarComponent,
   LoaderComponent,
   LoaderSetComponent,
@@ -28,6 +28,9 @@ const implementedComponents = ['List', 'PlanPicker'];
 
 export function App() {
   const selectedComponent = useSignal('PlanPicker');
+  const state = useSignal({
+    plan: '',
+  });
 
   return (
     <main class="h-screen touch-pan-y overflow-x-hidden m-auto sm:px-5 py-10 flex justify-center">
@@ -57,7 +60,18 @@ export function App() {
           { selectedComponent.value === 'Chart' && <ChartComponent /> }
           { selectedComponent.value === 'MoneyBack' && <MoneyBackComponent /> }
           { selectedComponent.value === 'Reviews' && <ReviewsComponent /> }
-          { selectedComponent.value === 'PlanPicker' && <PlanPickerComponent {...planPicker} /> }
+          { selectedComponent.value === 'PlanPicker' && (
+            <PlanPicker
+              {...planPicker}
+              value={state.value.plan}
+              onUpdate={(planId) => {
+                state.value = {
+                  ...state.value,
+                  plan: planId as string,
+                };
+              }}
+            />
+          ) }
           { selectedComponent.value === 'ProgressBar' && <ProgressBarComponent /> }
           { selectedComponent.value === 'Loader' && <LoaderComponent /> }
           { selectedComponent.value === 'LoaderSet' && <LoaderSetComponent /> }
