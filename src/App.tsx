@@ -1,5 +1,5 @@
 import { useSignal } from '@preact/signals';
-import { list } from './data';
+import { list, planPicker } from './data';
 import {
   ListComponent,
   ChartComponent,
@@ -44,12 +44,12 @@ export function App() {
           )) }
         </div>
 
-        <div class='max-w-sm w-full'>
+        <div class='max-w-sm w-full px-4 py-9 bg-white rounded-lg'>
           { selectedComponent.value === 'List' && <ListComponent title={list.title} items={list.items as any} /> }
           { selectedComponent.value === 'Chart' && <ChartComponent /> }
           { selectedComponent.value === 'MoneyBack' && <MoneyBackComponent /> }
           { selectedComponent.value === 'Reviews' && <ReviewsComponent /> }
-          { selectedComponent.value === 'PlanPicker' && <PlanPickerComponent /> }
+          { selectedComponent.value === 'PlanPicker' && <PlanPickerComponent {...planPicker} /> }
           { selectedComponent.value === 'ProgressBar' && <ProgressBarComponent /> }
           { selectedComponent.value === 'Loader' && <LoaderComponent /> }
           { selectedComponent.value === 'LoaderSet' && <LoaderSetComponent /> }
