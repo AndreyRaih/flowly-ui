@@ -5,7 +5,7 @@ export type PlanPickerProps = {
   title?: string
   defaultPlan?: Plan['id']
   plans: Plan[]
-} & Actionable
+} & Actionable<Plan['id']>
 
 export function PlanPicker({ title, defaultPlan, plans, value, onUpdate }: PlanPickerProps) {
   const selectedPlan = value ?? defaultPlan;

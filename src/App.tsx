@@ -3,15 +3,12 @@ import { useSignal } from '@preact/signals';
 import { list, planPicker, progressBar } from './data';
 import {
   ListComponent,
-  ChartComponent,
-  MoneyBackComponent,
-  ReviewsComponent,
+  PaymentMethodComponent,
   PlanPicker,
-  LoaderComponent,
-  LoaderSetComponent,
-  RatingComponent,
   ProgressBar,
 } from './tasks';
+import { PaymentMethod } from './tasks/payment-method';
+
 
 const components = [
   'List',
@@ -23,14 +20,19 @@ const components = [
   'Loader',
   'LoaderSet',
   'Rating',
+  'PaymentMethod',
 ];
 
-const implementedComponents = ['List', 'PlanPicker', 'ProgressBar'];
+const implementedComponents = ['List', 'PlanPicker', 'ProgressBar', 'PaymentMethod'];
 
 export function App() {
   const selectedComponent = useSignal('');
-  const state = useSignal({
+  const state = useSignal<{
+    plan: string;
+    paymentMethod: PaymentMethod | null;
+  }>({
     plan: '',
+    paymentMethod: null,
   });
 
   return (
@@ -58,9 +60,9 @@ export function App() {
 
         <div class='max-w-sm w-full px-4 py-9 bg-white rounded-lg'>
           { selectedComponent.value === 'List' && <ListComponent title={list.title} items={list.items as any} /> }
-          { selectedComponent.value === 'Chart' && <ChartComponent /> }
-          { selectedComponent.value === 'MoneyBack' && <MoneyBackComponent /> }
-          { selectedComponent.value === 'Reviews' && <ReviewsComponent /> }
+          { /* { selectedComponent.value === 'Chart' && <ChartComponent /> } */ }
+          { /* { selectedComponent.value === 'MoneyBack' && <MoneyBackComponent /> } */ }
+          { /* { selectedComponent.value === 'Reviews' && <ReviewsComponent /> } */ }
           { selectedComponent.value === 'PlanPicker' && (
             <PlanPicker
               {...planPicker}
@@ -73,6 +75,19 @@ export function App() {
               }}
             />
           ) }
+          { selectedComponent.value === 'PaymentMethod' && (
+            <PaymentMethodComponent
+              onNext={() => alert('continue')}
+              defaultValue={PaymentMethod.APPLE_PAY}
+              value={state.value.paymentMethod}
+              onUpdate={(paymentMethod) => {
+                state.value = {
+                  ...state.value,
+                  paymentMethod: paymentMethod,
+                };
+              }}
+            />
+          ) }
           { selectedComponent.value === 'ProgressBar' && (
             <div class={'flex flex-col gap-10'}>
               <ProgressBar {...progressBar.simple} />
@@ -80,9 +95,9 @@ export function App() {
               <ProgressBar {...progressBar.steps} />
             </div>
           ) }
-          { selectedComponent.value === 'Loader' && <LoaderComponent /> }
-          { selectedComponent.value === 'LoaderSet' && <LoaderSetComponent /> }
-          { selectedComponent.value === 'Rating' && <RatingComponent /> }
+          { /* { selectedComponent.value === 'Loader' && <LoaderComponent /> } */ }
+          { /* { selectedComponent.value === 'LoaderSet' && <LoaderSetComponent /> } */ }
+          { /* { selectedComponent.value === 'Rating' && <RatingComponent /> } */ }
         </div>
       </div>
     </main>
