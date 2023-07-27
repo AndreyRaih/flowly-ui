@@ -35,6 +35,5 @@ module.exports = {
   plugins: [
     require('tailwindcss-animated'),
     require('@tailwindcss/typography'),
-    require('tailwindcss-safe-area'),
   ],
 };
