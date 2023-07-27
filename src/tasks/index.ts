@@ -6,7 +6,7 @@ import { PlanPicker } from './plan-picker';
 import { PaymentMethodComponent } from './payment-method';
 import { LoaderComponent } from './loader';
 import { LoaderSetComponent } from './loader-set';
-import { ProgressBarComponent } from './progress-bar';
+import { ProgressBar } from './progress-bar';
 import { RatingComponent } from './rating';
 
 
@@ -19,6 +19,6 @@ export {
   PaymentMethodComponent,
   LoaderComponent,
   LoaderSetComponent,
-  ProgressBarComponent,
+  ProgressBar,
   RatingComponent,
 };
