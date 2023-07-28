@@ -1,4 +1,5 @@
 const defaultTheme = require('tailwindcss/defaultTheme');
+const colors = require('./src/common/colors.json');
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -15,18 +16,7 @@ module.exports = {
       fontSize: {
         '2xl': [ '28px', '36px' ],
       },
-      colors: {
-        primary: '#EF4444',
-        secondary: '#E7D0AF',
-        accent: '#FFA230',
-        gray: {
-          500: '#8f8f8f',
-          800: '#111111',
-        },
-        red: {
-          400: '#f8545d',
-        },
-      },
+      colors: colors,
       fontFamily: {
         sans: [ '"SF Pro Display"', ...defaultTheme.fontFamily.sans ],
       },

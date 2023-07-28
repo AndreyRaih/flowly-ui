@@ -1,15 +1,16 @@
+/* eslint-disable max-lines-per-function */
 import { useSignal } from '@preact/signals';
-import { list, planPicker } from './data';
+import { list, planPicker, progressBar } from './data';
 import {
   ListComponent,
   ChartComponent,
   MoneyBackComponent,
   ReviewsComponent,
   PlanPicker,
-  ProgressBarComponent,
   LoaderComponent,
   LoaderSetComponent,
   RatingComponent,
+  ProgressBar,
 } from './tasks';
 
 const components = [
@@ -24,10 +25,10 @@ const components = [
   'Rating',
 ];
 
-const implementedComponents = ['List', 'PlanPicker'];
+const implementedComponents = ['List', 'PlanPicker', 'ProgressBar'];
 
 export function App() {
-  const selectedComponent = useSignal('PlanPicker');
+  const selectedComponent = useSignal('');
   const state = useSignal({
     plan: '',
   });
@@ -72,7 +73,13 @@ export function App() {
               }}
             />
           ) }
-          { selectedComponent.value === 'ProgressBar' && <ProgressBarComponent /> }
+          { selectedComponent.value === 'ProgressBar' && (
+            <div class={'flex flex-col gap-10'}>
+              <ProgressBar {...progressBar.simple} />
+              <ProgressBar {...progressBar.segmented} />
+              <ProgressBar {...progressBar.steps} />
+            </div>
+          ) }
           { selectedComponent.value === 'Loader' && <LoaderComponent /> }
           { selectedComponent.value === 'LoaderSet' && <LoaderSetComponent /> }
           { selectedComponent.value === 'Rating' && <RatingComponent /> }

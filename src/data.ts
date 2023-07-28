@@ -1,6 +1,7 @@
 import { Currency } from './common/constants';
 import { PaymentPeriod } from './tasks/plan-picker';
 import { getIconUrl } from './utils/handleAssets';
+import colors from './common/colors.json';
 
 
 export const list = {
@@ -71,4 +72,38 @@ export const planPicker = {
       },
     },
   ],
+};
+
+export const progressBar = {
+  simple: {
+    current: 12,
+    total: 28,
+    title: 'Simple progress bar',
+    hasCounter: true,
+    colorStart: colors.orange[400],
+    colorEnd: colors.red[350],
+    onGoBack: () => alert('go back'),
+  },
+  segmented: {
+    current: 12,
+    total: 28,
+    segments: 4,
+    title: 'Segmented Progress Bar',
+    hasCounter: true,
+    // colorStart: colors.orange[400],
+    // colorEnd: colors.red[350],
+    onGoBack: () => alert('go back'),
+  },
+  steps: {
+    current: 12,
+    total: 28,
+    segments: 3,
+    steps: true,
+    size: 6,
+    title: 'Progress Bar with steps',
+    hasCounter: true,
+    colorStart: colors.orange[400],
+    colorEnd: colors.red[350],
+    onGoBack: () => alert('go back'),
+  },
 };
