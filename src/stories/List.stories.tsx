@@ -2,11 +2,9 @@ import { ListComponent } from '@/tasks';
 import { getIconUrl } from '@/utils/handleAssets';
 
 
-// More on how to set up stories at: https://storybook.js.org/docs/preact/writing-stories/introduction
 export default {
   title: 'Components/List',
   component: ListComponent,
-  tags: ['autodocs'],
   argTypes: {
   },
 };
@@ -34,7 +32,6 @@ const items = [
   },
 ];
 
-// More on writing stories with args: https://storybook.js.org/docs/preact/writing-stories/args
 export const Primary = {
   args: {
     items,

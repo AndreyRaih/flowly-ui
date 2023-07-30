@@ -3,6 +3,7 @@
   "secondary": "#E7D0AF",
   "accent": "#FFA230",
   "orange": {
+    "100": "#FAF1E3",
     "400": "#FF9F32"
   },
   "gray": {
