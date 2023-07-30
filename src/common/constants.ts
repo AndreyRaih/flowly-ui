@@ -1,3 +1,6 @@
+import colors from './colors.json';
+
+
 export enum Currency {
   USD = 'USD'
 }
@@ -5,3 +8,5 @@ export enum Currency {
 export const CURRENCY_SIGN = {
   [Currency.USD]: '$',
 };
+
+export { colors };
