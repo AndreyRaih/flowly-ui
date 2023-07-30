@@ -1,105 +1,11 @@
 /* eslint-disable max-lines-per-function */
-import { useSignal } from '@preact/signals';
-import { list, planPicker, progressBar } from './data';
-import {
-  ListComponent,
-  PaymentMethodComponent,
-  PlanPicker,
-  ProgressBar,
-} from './tasks';
-import { PaymentMethod } from './tasks/payment-method';
-
-
-const components = [
-  'List',
-  'PlanPicker',
-  'Chart',
-  'MoneyBack',
-  'Reviews',
-  'ProgressBar',
-  'Loader',
-  'LoaderSet',
-  'Rating',
-  'PaymentMethod',
-];
-
-const implementedComponents = ['List', 'PlanPicker', 'ProgressBar', 'PaymentMethod'];
 
 export function App() {
-  const selectedComponent = useSignal('');
-  const state = useSignal<{
-    plan: string;
-    paymentMethod: PaymentMethod | null;
-  }>({
-    plan: '',
-    paymentMethod: null,
-  });
-
   return (
-    <main class="h-screen touch-pan-y overflow-x-hidden m-auto sm:px-5 py-10 flex justify-center">
-      <div class='flex flex-col gap-12 sm:px-10 w-full items-center'>
-        <select
-          value={selectedComponent}
-          class='p-3 rounded-md outline-none font-mono appearance-none text-center text-lg'
-          onChange={(e: any) => {
-            selectedComponent.value = e.target.value;
-          }}
-        >
-          <option value="">-- Select your component --</option>
-          { components.map(component => (
-            <option
-              key={component}
-              value={component}
-              selected={component === selectedComponent.value}
-              disabled={!implementedComponents.includes(component)}
-            >
-              { component }
-            </option>
-          )) }
-        </select>
-
-        <div class='max-w-sm w-full px-4 py-9 bg-white rounded-lg'>
-          { selectedComponent.value === 'List' && <ListComponent title={list.title} items={list.items as any} /> }
-          { /* { selectedComponent.value === 'Chart' && <ChartComponent /> } */ }
-          { /* { selectedComponent.value === 'MoneyBack' && <MoneyBackComponent /> } */ }
-          { /* { selectedComponent.value === 'Reviews' && <ReviewsComponent /> } */ }
-          { selectedComponent.value === 'PlanPicker' && (
-            <PlanPicker
-              {...planPicker}
-              value={state.value.plan}
-              onUpdate={(planId) => {
-                state.value = {
-                  ...state.value,
-                  plan: planId as string,
-                };
-              }}
-            />
-          ) }
-          { selectedComponent.value === 'PaymentMethod' && (
-            <PaymentMethodComponent
-              onNext={() => alert('continue')}
-              defaultValue={PaymentMethod.APPLE_PAY}
-              value={state.value.paymentMethod}
-              onUpdate={(paymentMethod) => {
-                state.value = {
-                  ...state.value,
-                  paymentMethod: paymentMethod,
-                };
-              }}
-            />
-          ) }
-          { selectedComponent.value === 'ProgressBar' && (
-            <div class={'flex flex-col gap-10'}>
-              <ProgressBar {...progressBar.simple} />
-              <ProgressBar {...progressBar.segmented} />
-              <ProgressBar {...progressBar.steps} />
-            </div>
-          ) }
-          { /* { selectedComponent.value === 'Loader' && <LoaderComponent /> } */ }
-          { /* { selectedComponent.value === 'LoaderSet' && <LoaderSetComponent /> } */ }
-          { /* { selectedComponent.value === 'Rating' && <RatingComponent /> } */ }
-        </div>
-      </div>
+    <main class={'flex flex-col gap-4 items-center h-screen pb-20 justify-center'}>
+      <div class={'text-lg'}>Run</div>
+      <span class={'font-mono bg-red-350 text-white px-4 py-2 rounded-sm'}>yarn storybook</span>
+      <div class={'text-lg'}>to preview your components</div>
     </main>
   );
 }
