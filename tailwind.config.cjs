@@ -13,6 +13,7 @@ module.exports = {
         'lg': '32px',
         'md': '16px',
         'sm': '12px',
+        'xs': '8px',
       },
       fontSize: {
         '2xl': [ '28px', '36px' ],

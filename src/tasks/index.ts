@@ -7,7 +7,7 @@ import { PaymentMethodComponent } from './payment-method';
 import { LoaderComponent } from './loader';
 import { LoaderSetComponent } from './loader-set';
 import { ProgressBar } from './progress-bar';
-import { RatingComponent } from './rating';
+import { Rating } from './rating';
 
 
 export {
@@ -20,5 +20,5 @@ export {
   LoaderComponent,
   LoaderSetComponent,
   ProgressBar,
-  RatingComponent,
+  Rating,
 };
