@@ -4,18 +4,15 @@ import { asActionable } from './decorators';
 import { PaymentPeriod } from '@/tasks/plan-picker';
 
 
-// More on how to set up stories at: https://storybook.js.org/docs/preact/writing-stories/introduction
 export default {
   title: 'Components/PlanPicker',
   component: asActionable(PlanPicker),
-  tags: ['autodocs'],
   argTypes: {
     onUpdate: { action: 'onUpdate' },
   },
 };
 
-// More on writing stories with args: https://storybook.js.org/docs/preact/writing-stories/args
-export const Simple = {
+export const Default = {
   args: {
     title: 'Choose your plan',
     defaultPlan: '1',
