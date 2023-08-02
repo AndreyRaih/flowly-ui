@@ -1,0 +1,33 @@
+@keyframes spinner-border {
+  to { transform: rotate(360deg); }
+}
+
+.spinner {
+  --spinner-size: 2rem;
+  --spinner-border-size: .25em;
+  --spinner-border-color: #cecfd3;
+
+  display: inline-block;
+  width: var(--spinner-size);
+  height: var(--spinner-size);
+  vertical-align: text-bottom;
+  border: var(--spinner-border-size) solid var(--spinner-border-color);
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: spinner-border .75s linear infinite;
+}
+
+.size_xs {
+  --spinner-size: 1.2rem;
+  --spinner-border-size: 3px;
+}
+
+.size_sm {
+  --spinner-size: 1.36rem;
+  --spinner-border-size: .2em;
+}
+
+.size_md {
+  --spinner-size: 2rem;
+  --spinner-border-size: .25em;
+}
