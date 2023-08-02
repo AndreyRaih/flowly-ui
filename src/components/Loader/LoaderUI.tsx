@@ -33,7 +33,7 @@ export const LoaderUI = ({ progress, caption, compact = false, colors, active = 
           <span class={''}>
             { caption }
           </span>
-          <div class={'flex items-center gap-1'}>
+          <div class={'flex items-center gap-1 h-[21px]'}>
             <div>
               { progress >= 100 ? '✅' : (active && <Spinner size='xs' />) }
             </div>

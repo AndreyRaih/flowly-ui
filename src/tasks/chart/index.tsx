@@ -1,6 +1,8 @@
 import cs from 'classnames';
 import { format } from 'date-fns';
 
+import s from './style.module.css';
+
 
 export enum Direction {
   UP = 'up',
@@ -52,21 +54,21 @@ const Labels = ({ direction, lineType, startBadge, startDate, endBadge, endDate 
   const isDown = direction === Direction.DOWN;
 
   return (
-    <foreignObject x={0} y={5} width='100%' height={'100%'}>
+    <div>
       <div
-        class={cs('absolute px-5 py-4 rounded-md font-medium text-white text-lg inline-block leading-none', {
+        class={cs(s.endBadge, {
           ['top-0 right-0 bg-red-350']: !isDown,
           ['bg-secondary']: isDown,
-          ['top-[310px] right-[70px]']: isDown && lineType === LineType.WAVES,
-          ['top-[280px] right-[80px]']: isDown && lineType === LineType.CURVE,
+          ['top-[76%] right-[17%]']: isDown && lineType === LineType.WAVES,
+          ['top-[75%] right-[16%]']: isDown && lineType === LineType.CURVE,
         })}
       >
         { endBadge }
       </div>
 
       <div
-        class={cs('absolute left-0 px-5 py-4 rounded-md font-medium text-white text-lg inline-block leading-none', {
-          ['bg-secondary top-[222px]']: !isDown,
+        class={cs(s.startBadge, {
+          ['bg-secondary top-[56%]']: !isDown,
           ['bg-red-350 top-0']: isDown,
         })}
       >
@@ -74,15 +76,15 @@ const Labels = ({ direction, lineType, startBadge, startDate, endBadge, endDate 
       </div>
 
       <div
-        class={'absolute top-[100%] translate-y-[-110%] left-[46px] translate-x-[-50%] text-lg text-gray-800/60 font-medium'}
+        class={s.startDate}
       >
         { format(startDate, 'MMMM d') }
       </div>
 
-      <div class={'absolute right-[47px] top-[100%] translate-y-[-110%] translate-x-[50%] text-lg text-gray-800/60 font-medium'}>
+      <div class={s.endDate}>
         { format(endDate, 'MMMM d') }
       </div>
-    </foreignObject>
+    </div>
   );
 };
 
@@ -117,16 +119,15 @@ export const ChartSVG = (props: ChartProps) => {
         <line style="fill: rgb(216, 216, 216); stroke: rgba(17, 17, 17, 0.10);" x1="0.083" y1="171.679" x2="500.083" y2="171.679" />
         <line style="fill: rgb(216, 216, 216); stroke: rgba(17, 17, 17, 0.10);" x1="0.083" y1="244.929" x2="500.083" y2="244.929" />
       </g>
-
-      <Labels {...props} />
     </svg>
   );
 };
 
 export function ChartComponent(props: ChartProps) {
   return (
-    <div class={'max-w-sm'}>
+    <div class={'max-w-sm relative'}>
       <ChartSVG {...props} />
+      <Labels {...props} />
     </div>
   );
 }
