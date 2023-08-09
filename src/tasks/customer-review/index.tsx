@@ -1,4 +1,5 @@
 type CustomerReviewProps = {
+  title: string
   imgUrl: string
   review: {
     rate: number
