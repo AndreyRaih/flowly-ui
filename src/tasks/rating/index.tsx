@@ -1,3 +1,4 @@
+import { arrayRange } from '@/utils/array';
 import cs from 'classnames';
 
 
@@ -9,7 +10,7 @@ export type RatingProps = {
 } & Actionable<number>
 
 export function Rating({ value, minRate = 1, maxRate = 5, minRateLabel, maxRateLabel, onUpdate }: RatingProps) {
-  const items = Array(maxRate - minRate + 1).fill(0);
+  const items = arrayRange(maxRate - minRate + 1);
 
   return (
     <div>

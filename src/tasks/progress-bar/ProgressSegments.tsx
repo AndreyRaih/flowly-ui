@@ -1,4 +1,5 @@
 import { ProgressLine } from '@/components/ProgressLine';
+import { arrayRange } from '@/utils/array';
 
 
 export const ProgressSegments = ({ progress, size, segments, steps, colorStart, colorEnd }: {
@@ -9,7 +10,7 @@ export const ProgressSegments = ({ progress, size, segments, steps, colorStart, 
   colorEnd?: string;
   size?: number;
 }) => {
-  const items = Array(segments).fill(null);
+  const items = arrayRange(segments);
   const itemMaxProgress = 100 / segments;
 
   return (

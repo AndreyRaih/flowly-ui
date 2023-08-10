@@ -16,7 +16,7 @@ export const Default = {
   },
 };
 
-export const Segmented = {
+export const Compact = {
   args: {
     label: 'Subtitle',
     compact: true,

@@ -33,7 +33,7 @@ export const PriceBadge = ({ price, currency, period }: {
         <div class={'font-bold'}>
           { decimalDigits }
         </div>
-        <div class='text-xs'>
+        <div class='text-xxs'>
           { `per ${period}` }
         </div>
       </div>

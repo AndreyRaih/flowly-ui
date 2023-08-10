@@ -17,6 +17,6 @@
 
 @media (max-width: 350px) {
   .startBadge, .endBadge {
-    @apply px-3 py-2 text-xs;
+    @apply px-3 py-2 text-xxs;
   }
 }

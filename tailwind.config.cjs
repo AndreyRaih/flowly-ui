@@ -16,6 +16,8 @@ module.exports = {
         'xs': '8px',
       },
       fontSize: {
+        'xxs': defaultTheme.fontSize.xs,
+        'xs': ['13px'],
         '2xl': [ '28px', '36px' ],
       },
       colors: colors,
