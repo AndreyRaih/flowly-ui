@@ -6,7 +6,7 @@ export type LoaderProps = {
   label: string
   duration?: number;
   compact?: boolean
-  onDone: () => void
+  onDone?: () => void
   active?: boolean;
 }
 

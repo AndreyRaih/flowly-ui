@@ -1,4 +1,5 @@
 import { ProgressLine } from '@/components/ProgressLine';
+import { arrayRange } from '@/utils/array';
 
 
 const StepIcon = ({ checked, bg = '#eee', size = 18 }: { size?: number; checked?: boolean; bg?: string; color?: string }) => {
@@ -18,7 +19,7 @@ const Steps = ({ progress, count, color, completedBg, bg, size = 18 }: {
   progress: number; 
   count: number;
 }) => {
-  const steps = Array(count).fill(null);
+  const steps = arrayRange(count);
   const segmentMaxProgress = 100 / (count - 1);
 
   return (
