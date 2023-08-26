@@ -14,6 +14,19 @@ const Options = ({
   onUpdate,
   isMultiple,
 }: Omit<ImagePickerProps, 'title'>) => {
+  const handleChange = (optionValue: string, selected: boolean) => {
+    let newValue;
+
+    if (isMultiple) {
+      const arrValue = (value || []) as [];
+      newValue = selected ? [...arrValue, optionValue] : arrValue.filter(v => v !== optionValue);
+    } else {
+      newValue = optionValue;
+    }
+
+    onUpdate(newValue);
+  };
+
   return (
     <>
       { options.map(option => {
@@ -23,15 +36,7 @@ const Options = ({
           <div key={option.value} style={{ width: 'calc(50% - 8px)' }}>
             <OptionItem 
               selected={selected}
-              onSelect={() => {
-                if (isMultiple) {
-                  const arrValue = (value || []) as [];
-                  const newValue = selected ? arrValue.filter(v => v !== option.value) : [...arrValue, option.value];
-                  onUpdate(newValue);
-                } else {
-                  onUpdate(option.value);
-                }
-              }}
+              onSelect={() => handleChange(option.value, !selected)}
               option={option}
             />
           </div>
