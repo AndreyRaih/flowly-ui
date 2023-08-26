@@ -15,7 +15,7 @@ export const OptionItem = ({ option, selected, onSelect }: {
   onSelect: () => void
 }) => {
   const { imgSrc, value, label = value } = option;
-  const cls = cs(s.option, selected && s.checked, 'flex flex-col rounded-sm overflow-hidden bg-gray-100 cursor-pointer');
+  const cls = cs(s.option, selected && s.checked);
   
   return (
     <div class={cls} onClick={() => onSelect()}>

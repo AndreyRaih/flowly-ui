@@ -4,6 +4,7 @@
 }
 
 .checked .rect {
+  transition: fill .1s;
   fill: var(--checkbox-color, #F8545D);
   stroke: none;
 }
