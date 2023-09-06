@@ -1,0 +1,24 @@
+
+.rect {
+  fill: white;
+}
+
+.checked .rect {
+  transition: fill .1s;
+  fill: var(--checkbox-color, #F8545D);
+  stroke: none;
+}
+
+.checkmark {
+  opacity: var(--checkbox-checkmark-opacity, 0);
+  stroke: currentColor;
+  transition: opacity .1s;
+}
+
+.checkbox:hover .checkmark {
+  opacity: var(--checkbox-checkmark-opacity, 0.6);
+}
+
+.checked .checkmark {
+  opacity: var(--checkbox-checkmark-opacity, 1) !important;
+}
