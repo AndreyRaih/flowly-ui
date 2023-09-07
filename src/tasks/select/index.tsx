@@ -1,15 +1,24 @@
+import { ListOptionsPicker } from '@/components/OptionPicker';
+
+
 type SelectProps = {
   title: string
   isMultiple?: boolean
   options: {
-    label: number
+    label: string
     value: string
-    icon?: string
-    iconSet?: string[]
+    image?: string
+    icons?: string[]
   }[],
-  duration?: number;
 } & Actionable<string | string[]>
 
-export function Select(props: SelectProps) {
-  return (<div />);
+export function Select({ title, ...rest }: SelectProps) {
+  return (
+    <div class={'flex flex-col gap-6'}>
+      <div class={'text-xl font-bold text-center'}>
+        { title }
+      </div>
+      <ListOptionsPicker {...rest} />
+    </div>
+  );
 }
