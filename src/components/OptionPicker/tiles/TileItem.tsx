@@ -1,6 +1,6 @@
 import cs from 'classnames';
 import { Checkbox } from '@/components/Checkbox';
-import { Option } from '../OptionsPicker';
+import { Option } from '../OptionsContainer';
 
 import s from '../style.module.css';
 

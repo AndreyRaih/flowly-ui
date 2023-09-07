@@ -1,5 +1,5 @@
 import cs from 'classnames';
-import type { Option } from '../OptionsPicker';
+import type { Option } from '../OptionsContainer';
 import { Checkbox } from '@/components/Checkbox';
 
 import s from '../style.module.css';

@@ -1,29 +1,27 @@
-import { OptionsPicker, OptionPickerProps } from '../OptionsPicker';
+import { OptionsContainer, OptionsPickerProps } from '../OptionsContainer';
 import { TileItem, TileOption } from './TileItem';
 
 
 type TileOptionData = {
-  image?: string;
-  icons?: string[];
-  checkbox?: boolean;
+  image: string;
 }
 
 export { type TileOption };
 
-export function TilesOptionsPicker<T>(props: OptionPickerProps<T, TileOptionData>) {
+export function TilesOptionsPicker<T>(props: OptionsPickerProps<T, TileOptionData>) {
   return (
     <div class={'flex flex-wrap gap-4 justify-center'}>
-      <OptionsPicker {...props}>
+      <OptionsContainer {...props}>
         { ({ selected, onSelect, option }) => (
           <div style="width: calc(50% - 8px);">
             <TileItem 
-              option={option as TileOption<T>}
+              option={option}
               selected={selected}
               onSelect={onSelect}
             />
           </div>
         ) }
-      </OptionsPicker>
+      </OptionsContainer>
     </div>
   );
 }

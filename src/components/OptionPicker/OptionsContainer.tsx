@@ -1,7 +1,7 @@
 import { ComponentChild } from 'preact';
 
 
-export interface OptionPickerProps<Value, OptionData> extends Actionable <Value | Value[]>{
+export interface OptionsContainerProps<Value, OptionData> extends Actionable <Value | Value[]>{
   isMultiple?: boolean;
   options: Array<Option<Value, OptionData>>;
   // value?: Value | Value[];
@@ -25,13 +25,15 @@ export type Option<Value, OptionData = {}> = {
   [K in keyof OptionData]: OptionData[K];
 }
 
-export function OptionsPicker<Value, OptionData>({
+export type OptionsPickerProps<T, OptionData> = OptionsContainerProps<T, OptionData>;
+
+export function OptionsContainer<Value, OptionData>({
   options,
   value,
   onUpdate,
   isMultiple,
   children,
-}: OptionPickerProps<Value, OptionData> & {
+}: OptionsContainerProps<Value, OptionData> & {
   children: OptionRenderer<Value, OptionData>;
 }) {
   const handleChange = (optionValue: Value, selected: boolean) => {
