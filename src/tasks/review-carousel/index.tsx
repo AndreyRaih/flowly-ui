@@ -6,8 +6,8 @@ import { InfiniteCarousel } from '@/components/InfiniteCarousel/InfiniteCarousel
 type ReviewCarouselProps = {
   title: string
   reviews: Review[],
-  durationSec?: number;
-  intervalSec?: number;
+  duration?: seconds;
+  interval?: seconds;
 }
 
 type Review = {
@@ -35,7 +35,7 @@ const ReviewItem = ({ author, text, rate }: Review) => {
   );
 };
 
-export function ReviewCarousel({ title, reviews, intervalSec, durationSec }: ReviewCarouselProps) {
+export function ReviewCarousel({ title, reviews, interval: intervalSec, duration: durationSec }: ReviewCarouselProps) {
   return (
     <div class={'flex flex-col gap-5'}>
       <div class={'text-xl font-medium text-center'}>
@@ -43,10 +43,11 @@ export function ReviewCarousel({ title, reviews, intervalSec, durationSec }: Rev
       </div>
 
       <InfiniteCarousel
-        durationSec={durationSec} 
         count={reviews.length}
         gap={30}
-        intervalSec={intervalSec}
+        duration={durationSec} 
+        interval={intervalSec}
+        // need negative space for the shadows
         className='p-5 -m-5'
       >
         { (index: number) => (

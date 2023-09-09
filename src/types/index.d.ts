@@ -3,3 +3,5 @@ type Actionable <T> = {
   value?: T | null
   onUpdate: (value: T | null) => void
 }
+
+type seconds = number;

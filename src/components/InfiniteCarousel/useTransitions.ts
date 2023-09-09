@@ -20,14 +20,14 @@ const useContainerWidth = (containerRef: RefObject<HTMLDivElement>) => {
   return containerWidth.value;
 };
 
-export const useTransitions = ({ containerRef, count, gap, intervalSec, durationSec = 400 }: {
+export const useTransitions = ({ containerRef, count, gap, interval, duration = 0.4 }: {
   count: number
   containerRef: RefObject<HTMLDivElement>
   gap: number
-  intervalSec: number
-  durationSec?: number
+  interval: seconds
+  duration?: seconds
 }) => {
-  const realIndex = useNavigation({ count, intervalSec: intervalSec - durationSec });
+  const realIndex = useNavigation({ count, interval: interval - duration });
   const transitionIndex = useSignal(realIndex.value);
   const containerWidth = useContainerWidth(containerRef);
   const offset = useSignal(0);
@@ -42,7 +42,7 @@ export const useTransitions = ({ containerRef, count, gap, intervalSec, duration
       targets: offset,
       value: containerWidth + gap,
       easing: 'cubicBezier(0.46,0.03,0.52,0.96)',
-      duration: durationSec * 1000,
+      duration: duration * 1000,
       complete: function() {
         offset.value = 0;
         transitionIndex.value = realIndex.value;

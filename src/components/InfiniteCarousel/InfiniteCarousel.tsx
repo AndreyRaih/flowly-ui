@@ -6,20 +6,20 @@ import { useTransitions } from './useTransitions';
 
 
 export type Props = {
-  className?: string
-  gap?: number
-  intervalSec?: number
   count: number
-  durationSec?: number 
   children: (index: number) => VNode<any>
+  gap?: number
+  className?: string
+  interval?: seconds
+  duration?: seconds
 };
 
 export const InfiniteCarousel = ({ 
-  children: renderItem, 
   count, 
   gap = 24, 
-  intervalSec = 2, 
-  durationSec = 0.4,
+  children: renderItem, 
+  interval: intervalSec = 2, 
+  duration: durationSec = 0.4,
   className,
 }: Props) => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -27,7 +27,7 @@ export const InfiniteCarousel = ({
   const {
     itemIndex,
     offset,
-  } = useTransitions({ containerRef, count, gap, intervalSec, durationSec });
+  } = useTransitions({ containerRef, count, gap, interval: intervalSec, duration: durationSec });
 
   if (count <= 1) {
     return renderItem(0);

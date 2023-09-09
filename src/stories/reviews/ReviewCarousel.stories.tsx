@@ -10,8 +10,8 @@ export default {
 
 export const Default = {
   args: {
-    intervalSec: 3,
-    durationSec: 0.4,
+    interval: 3,
+    duration: 0.4,
     reviews: [
       {
         author: 'John Doe',
