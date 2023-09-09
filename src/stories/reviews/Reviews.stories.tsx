@@ -2,7 +2,7 @@ import { ReviewsComponent } from '@/tasks';
 
 
 export default {
-  title: 'Components/Reviews/Static',
+  title: 'Components/Reviews/List',
   component: ReviewsComponent,
   argTypes: {
   },

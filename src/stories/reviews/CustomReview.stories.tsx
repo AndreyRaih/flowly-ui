@@ -3,7 +3,7 @@ import { getAssetUrl } from '@/utils/handleAssets';
 
 
 export default {
-  title: 'Components/Customer Review',
+  title: 'Components/Reviews/Single',
   component: CustomerReview,
   argTypes: {
   },
