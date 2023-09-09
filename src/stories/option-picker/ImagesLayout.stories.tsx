@@ -1,10 +1,10 @@
 import { getAssetUrl } from '@/utils/handleAssets';
-import { asActionable } from './decorators';
+import { asActionable } from '../decorators';
 import { ImagePicker } from '@/tasks/image-picker';
 
 
 export default {
-  title: 'Components/ImagePicker',
+  title: 'Components/OptionPicker/ImagePicker',
   component: asActionable(ImagePicker),
   argTypes: {
     onUpdate: { action: 'onUpdate' },
