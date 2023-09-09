@@ -1,6 +1,6 @@
 /* eslint-disable max-lines-per-function */
 import { StarsRating } from '@/components/StarsRating';
-import { InfiniteCarousel } from '@/components/InfiniteCarousel';
+import { InfiniteCarousel } from '@/components/InfiniteCarousel/InfiniteCarousel';
 
 
 type ReviewCarouselProps = {
@@ -43,7 +43,7 @@ export function ReviewCarousel({ title, reviews, intervalSec, durationSec }: Rev
       </div>
 
       <InfiniteCarousel
-        transitionDurationSec={durationSec} 
+        durationSec={durationSec} 
         count={reviews.length}
         gap={30}
         intervalSec={intervalSec}

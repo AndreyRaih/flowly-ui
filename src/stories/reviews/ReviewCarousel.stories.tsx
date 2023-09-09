@@ -10,7 +10,7 @@ export default {
 
 export const Default = {
   args: {
-    intervalSec: 2,
+    intervalSec: 3,
     durationSec: 0.4,
     reviews: [
       {
