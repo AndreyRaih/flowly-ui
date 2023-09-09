@@ -34,7 +34,7 @@ export const useTransitions = ({ containerRef, count, gap, intervalSec, duration
 
   // Run animation first, then make the changes
   useLayoutEffect(() => {
-    if (containerWidth <= 0) {
+    if (containerWidth <= 0 || transitionIndex.value === realIndex.value) {
       return;
     }
 
