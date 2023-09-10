@@ -1,0 +1,32 @@
+.container {
+  @apply flex justify-between items-center relative;
+}
+
+.input {
+  @apply w-full appearance-none outline-none text-2xl font-bold py-2;
+
+  border-bottom: 1px solid var(--input-border-color, #B4BBC2);
+  text-align: center;
+  color: var(--input-color, #000000);
+}
+
+.input:focus, .input:active {
+  border-bottom-color: var(--input-color, #000000);
+}
+
+.suffix {
+  @apply font-bold absolute right-0;
+
+  color: var(--input-border-color, #B4BBC2);
+  font-variant: all-small-caps;
+}
+
+.input::-webkit-outer-spin-button,
+.input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.input[type=number] {
+  -moz-appearance: textfield;
+}
