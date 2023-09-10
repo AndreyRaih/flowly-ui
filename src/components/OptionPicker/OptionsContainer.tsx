@@ -4,8 +4,6 @@ import { ComponentChild } from 'preact';
 export interface OptionsContainerProps<Value, OptionData> extends Actionable <Value | Value[]>{
   isMultiple?: boolean;
   options: Array<Option<Value, OptionData>>;
-  // value?: Value | Value[];
-  onUpdate: (value: (Value | Value[]) | null) => void;
 }
 
 type OptionRenderer<Value, OptionData> = ({
