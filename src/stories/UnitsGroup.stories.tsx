@@ -1,10 +1,10 @@
 import { asActionable } from './decorators';
-import { InputGroup } from '@/tasks/input-group';
+import { UnitsGroup } from '@/tasks/units-group';
 
 
 export default {
-  title: 'Components/InputGroup',
-  component: asActionable(InputGroup),
+  title: 'Components/UnitsGroup',
+  component: asActionable(UnitsGroup),
   argTypes: {
     onUpdate: { action: 'onUpdate' },
   },

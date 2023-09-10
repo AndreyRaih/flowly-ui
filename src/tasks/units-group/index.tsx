@@ -53,7 +53,7 @@ const useGroups = (groups: Group[]) => {
   }, [groups]);
 };
 
-export function InputGroup({ title, groups, value, onUpdate }: InputGroupProps) {
+export function UnitsGroup({ title, groups, value, onUpdate }: InputGroupProps) {
   const { tabs, groupsMap } = useGroups(groups);
 
   const renderTab = (code: string) => {
