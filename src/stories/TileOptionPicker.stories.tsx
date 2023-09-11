@@ -13,17 +13,17 @@ export default {
 
 const options = [
   {
-    imgSrc: getAssetUrl('images/preview/imagepicker/option1.png'),
+    image: getAssetUrl('images/preview/imagepicker/option1.png'),
     value: 'value1',
     label: 'Option 1',
   },
   { 
-    imgSrc: getAssetUrl('images/preview/imagepicker/option2.png'),
+    image: getAssetUrl('images/preview/imagepicker/option2.png'),
     value: 'value2',
     label: 'Option 2',
   },
   {
-    imgSrc: getAssetUrl('images/preview/imagepicker/option3.png'),
+    image: getAssetUrl('images/preview/imagepicker/option3.png'),
     value: 'value3',
     label: 'Too long option',
   },

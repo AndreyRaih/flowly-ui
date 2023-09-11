@@ -1,5 +1,5 @@
 .option {
-  @apply flex flex-col rounded-sm overflow-hidden bg-gray-100 cursor-pointer;
+  @apply rounded-sm overflow-hidden bg-gray-100 cursor-pointer;
   
   border: 1.5px solid transparent;
   transition: border-color .1s;

@@ -11,7 +11,7 @@
 
 .checkmark {
   opacity: var(--checkbox-checkmark-opacity, 0);
-  stroke: currentColor;
+  stroke: white;
   transition: opacity .1s;
 }
 
