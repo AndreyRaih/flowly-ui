@@ -18,6 +18,7 @@ export function TilesOptionsPicker<T>(props: OptionsPickerProps<T, TileOptionDat
               option={option}
               selected={selected}
               onSelect={onSelect}
+              checkbox={props.isMultiple}
             />
           </div>
         ) }
