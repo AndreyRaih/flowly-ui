@@ -1,4 +1,4 @@
-import { Rating } from './Rating';
+import { StarsRating } from '../../components/StarsRating';
 
 
 type Review = {
@@ -20,7 +20,7 @@ const ReviewItem = ({ title, rate, text, author, country }: Review) => {
       <div class={'text-lg mb-1.5'}>
         { title }
       </div>
-      <Rating value={rate} />
+      <StarsRating value={rate} />
       <div class={'mt-4 text-sm text-gray-600'}>
         { text }
       </div>
