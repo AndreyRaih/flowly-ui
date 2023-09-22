@@ -1,3 +1,4 @@
+import { Title } from '@/components/Title';
 import { getAssetUrl } from '@/utils/handleAssets';
 
 
@@ -13,9 +14,9 @@ export function MoneyBackComponent({ title, text }: MoneyBackProps) {
         <img src={getAssetUrl('images/money-back.png')} alt="Money back guarantee" class={'h-[116px]'} />
       </div>
       <div class={'flex flex-col gap-3 px-8 pb-4 pt-[4.5rem] mt-[-75px] bg-orange-100/50 rounded-md'}>
-        <div class={'text-xl text-center font-medium'}>
+        <Title>
           { title }
-        </div>
+        </Title>
         <div class={'text-sm text-center'}>
           { text }
         </div>

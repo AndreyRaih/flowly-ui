@@ -18,6 +18,8 @@ module.exports = {
       fontSize: {
         'xxs': defaultTheme.fontSize.xs,
         'xs': ['13px'],
+        'md': ['18px', '20px'],
+        'lg': ['20px', '24px'],
         'xl': [ '24px', '28px' ],
         '2xl': [ '28px', '36px' ],
       },

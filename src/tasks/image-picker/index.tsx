@@ -1,4 +1,5 @@
 import { TileOption, TilesOptionsPicker } from '@/components/OptionPicker';
+import { Title } from '@/components/Title';
 
 
 type ImagePickerProps<T> = {
@@ -11,9 +12,9 @@ type ImagePickerProps<T> = {
 export function ImagePicker<T>({ title, ...optionsProps }: ImagePickerProps<T>) {
   return (
     <div class={'max-w-sm flex flex-col gap-6'}>
-      <div class={'text-xl font-bold text-center'}>
+      <Title>
         { title }
-      </div>
+      </Title>
       <TilesOptionsPicker {...optionsProps} />
     </div>
   );

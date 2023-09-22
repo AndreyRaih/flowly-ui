@@ -1,3 +1,4 @@
+import { Title } from '@/components/Title';
 import { Rating } from './Star';
 
 
@@ -37,10 +38,10 @@ export function CustomerReview({
   review,
 }: CustomerReviewProps) {
   return (
-    <div class={'flex flex-col gap-5 max-w-sm'}>
-      <div class={'text-xl font-bold text-center px-4'}>
+    <div class={'flex flex-col gap-5 max-w-sm mx-auto'}>
+      <Title>
         { title }
-      </div>
+      </Title>
 
       <div class={''}>
         <img src={imgUrl} alt={`${review.author}`} class={'rounded-sm overflow-hidden object-contain'} />

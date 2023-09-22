@@ -1,3 +1,4 @@
+import { Title } from '@/components/Title';
 import { Plan, PlanItem } from './PlanItem';
 
 
@@ -12,9 +13,9 @@ export function PlanPicker({ title, defaultPlan, plans, value, onUpdate }: PlanP
 
   return (
     <div class='flex flex-col gap-5'>
-      <div class='font-bold text-xl text-center'>
+      <Title>
         { title }
-      </div>
+      </Title>
       { plans.map(plan => (
         <PlanItem 
           key={plan.id} 
