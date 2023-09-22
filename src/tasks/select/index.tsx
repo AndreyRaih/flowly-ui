@@ -1,4 +1,5 @@
 import { ListOptionsPicker } from '@/components/OptionPicker';
+import { Title } from '@/components/Title';
 
 
 type SelectProps = {
@@ -15,9 +16,9 @@ type SelectProps = {
 export function Select({ title, ...rest }: SelectProps) {
   return (
     <div class={'flex flex-col gap-6'}>
-      <div class={'text-xl font-bold text-center'}>
+      <Title>
         { title }
-      </div>
+      </Title>
       <ListOptionsPicker {...rest} />
     </div>
   );

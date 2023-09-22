@@ -1,4 +1,4 @@
-import { BackIcon } from '@/components/icons';
+import { BackArrow } from '@/components/icons/BackArrow';
 
 
 const Counter = ({ current, total }: {
@@ -6,7 +6,7 @@ const Counter = ({ current, total }: {
   total: number;
 }) => {
   return (
-    <div class='flex gap-0.5 text-lg font-medium'>
+    <div class='flex gap-0.5 font-medium'>
       <span class='text-red-350'>
         { current }
       </span>
@@ -26,16 +26,16 @@ export const ProgressHeader = ({ title, onGoBack, hasCounter, current, total }: 
   current: number;
 }) => {
   return (
-    <div class={'flex items-center justify-center relative'}>
+    <div class={'flex h-6 items-center justify-center relative text-gray-550'}>
       <div class={'absolute left-0'}>
         { onGoBack && (
-          <BackIcon class='cursor-pointer' onClick={() => onGoBack()} />
+          <BackArrow class='cursor-pointer' onClick={() => onGoBack()} />
         ) }
       </div>
-      <div class={'text-lg font-medium'} style={{ maxWidth: 'calc(100% - 120px)' }}>
+      <div class={'text-[15px] font-medium'} style={{ maxWidth: 'calc(100% - 120px)' }}>
         { title }
       </div>
-      <div class={'absolute right-0'}>
+      <div class={'absolute right-0 text-[15px]'}>
         { hasCounter && (
           <Counter current={current} total={total} />
         ) }

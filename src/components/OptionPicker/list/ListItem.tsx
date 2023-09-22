@@ -10,21 +10,22 @@ export interface ListItemOption<T> extends Option<T> {
   icons?: string[]
 }
 
-export function ListItem<T>({ option: { image, label, icons }, checkbox, selected, onSelect }: { 
+export function ListItem<T>({ option: { image, label, icons }, className, checkbox, selected, onSelect }: { 
   option: ListItemOption<T>
   selected?: boolean
   onSelect: () => void
   checkbox?: boolean
+  className?: string
 }) {
   const handleClick = () => {
     onSelect();
   };
 
   return (
-    <div class={cs(s.option, selected && s.checked, 'flex gap-4 items-center px-4')} onClick={handleClick}>
+    <div class={cs(s.option, selected && s.checked, 'flex gap-4 items-center px-4', className)} onClick={handleClick}>
       { image && (
         <div class={'py-2 -ml-2'}>
-          <img class={'max-h-[64px] rounded-xs'} src={image} alt={label} />
+          <img class={'w-full max-h-[64px] aspect-square rounded-xs'} src={image} alt={label} />
         </div>
       ) }
       <div class={'py-7 flex-1 font-medium'}>

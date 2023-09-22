@@ -7,9 +7,9 @@ type ListItemOptionData = {
   icons?: string[];
 }
 
-export function ListOptionsPicker<T>(props: OptionsContainerProps<T, ListItemOptionData>) {
+export function ListOptionsPicker<T>({ itemClass, ...props }: OptionsContainerProps<T, ListItemOptionData>) {
   return (
-    <div class={'flex gap-4 flex-col'}>
+    <div class={'flex gap-2 flex-col'}>
       <OptionsContainer {...props}>
         { ({ selected, onSelect, option }) => (
           <ListItem 
@@ -17,6 +17,7 @@ export function ListOptionsPicker<T>(props: OptionsContainerProps<T, ListItemOpt
             selected={selected}
             onSelect={onSelect}
             checkbox={props.isMultiple}
+            className={itemClass}
           />
         ) }
       </OptionsContainer>

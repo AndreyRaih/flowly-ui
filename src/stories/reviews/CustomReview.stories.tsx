@@ -15,7 +15,7 @@ export const Default = {
     imgUrl: getAssetUrl('images/preview/sheena.png'),
     review: {
       rate: 4,
-      text: 'Customer review',
+      text: 'I was surprised my wardrobe lacked the colors the app identified for me, but when I pulled out a jacket in my palette, I was amazed at how it made my skin, hair, and eyes pop.',
       author: 'Sheena',
       date: 'July 10th, 2023',
     },

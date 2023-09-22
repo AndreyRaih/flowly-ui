@@ -1,6 +1,7 @@
 /* eslint-disable max-lines-per-function */
 import { StarsRating } from '@/components/StarsRating';
 import { InfiniteCarousel } from '@/components/InfiniteCarousel/InfiniteCarousel';
+import { Title } from '@/components/Title';
 
 
 type ReviewCarouselProps = {
@@ -38,9 +39,9 @@ const ReviewItem = ({ author, text, rate }: Review) => {
 export function ReviewCarousel({ title, reviews, interval: intervalSec, duration: durationSec }: ReviewCarouselProps) {
   return (
     <div class={'flex flex-col gap-5'}>
-      <div class={'text-xl font-medium text-center'}>
+      <Title>
         { title }
-      </div>
+      </Title>
 
       <InfiniteCarousel
         count={reviews.length}

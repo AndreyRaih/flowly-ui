@@ -1,3 +1,4 @@
+import { Title } from '@/components/Title';
 import { Rating } from './Star';
 
 
@@ -24,7 +25,7 @@ const Review = ({ author, text, date, rate }: CustomerReviewProps['review']) => 
           { date }
         </div>
       </div>
-      <div class={'text-blue-900'}>
+      <div class={'text-blue-900 leading-[16px]'}>
         { text }
       </div>
     </div>
@@ -37,13 +38,13 @@ export function CustomerReview({
   review,
 }: CustomerReviewProps) {
   return (
-    <div class={'flex flex-col gap-5 max-w-sm'}>
-      <div class={'text-xl font-bold text-center px-4'}>
+    <div class={'flex flex-col gap-5'}>
+      <Title class={'mb-1'}>
         { title }
-      </div>
+      </Title>
 
       <div class={''}>
-        <img src={imgUrl} alt={`${review.author}`} class={'rounded-sm overflow-hidden object-contain'} />
+        <img src={imgUrl} alt={`${review.author}`} class={'rounded-sm overflow-hidden object-contain mx-auto'} />
       </div>
 
       <Review {...review} />

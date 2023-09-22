@@ -79,7 +79,7 @@ export function ProgressBar({
   const progress = Math.round(current / total * 100);
 
   return (
-    <div class='flex flex-col gap-4'>
+    <div class='flex flex-col gap-3 h-[72px] justify-center'>
       <ProgressHeader 
         title={title}
         onGoBack={onGoBack}
