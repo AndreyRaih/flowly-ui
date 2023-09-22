@@ -22,7 +22,7 @@ const ReviewItem = ({ title, rate, text, author, country }: Review) => {
         { title }
       </div>
       <StarsRating value={rate} />
-      <div class={'mt-4 text-sm text-gray-600'}>
+      <div class={'mt-4 text-sm text-gray-600 leading-[120%]'}>
         { text }
       </div>
       <div class={'mt-4 text-sm'}>
