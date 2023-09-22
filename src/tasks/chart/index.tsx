@@ -125,7 +125,7 @@ export const ChartSVG = (props: ChartProps) => {
 
 export function ChartComponent(props: ChartProps) {
   return (
-    <div class={'max-w-sm relative'}>
+    <div class={'max-w-sm mx-auto relative'}>
       <ChartSVG {...props} />
       <Labels {...props} />
     </div>

@@ -9,14 +9,15 @@ export interface TileOption<T> extends Option<T> {
   image: string
 }
 
-export function TileItem<T> ({ option, selected, onSelect, checkbox }: {
+export function TileItem<T> ({ option, selected, onSelect, checkbox, className }: {
   option: TileOption<T>
   selected?: boolean
   checkbox?: boolean
+  className?: string
   onSelect: () => void
 }) {
   const { image, value, label = value } = option;
-  const cls = cs(s.option, selected && s.checked, 'flex flex-col');
+  const cls = cs(s.option, selected && s.checked, 'flex flex-col', className);
   
   return (
     <div class={cls} onClick={() => onSelect()}>

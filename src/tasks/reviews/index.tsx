@@ -1,3 +1,4 @@
+import { Title } from '@/components/Title';
 import { StarsRating } from '../../components/StarsRating';
 
 
@@ -17,7 +18,7 @@ export type ReviewsProps = {
 const ReviewItem = ({ title, rate, text, author, country }: Review) => {
   return (
     <div class={'flex flex-col py-4 px-5 bg-white rounded-md'} style={{ boxShadow: '0px 6px 24px 4px rgba(5, 29, 51, 0.08)' }}>
-      <div class={'text-lg mb-1.5'}>
+      <div class={'text-md mb-1.5'}>
         { title }
       </div>
       <StarsRating value={rate} />
@@ -36,9 +37,9 @@ const ReviewItem = ({ title, rate, text, author, country }: Review) => {
 export function ReviewsComponent({ reviews, title }: ReviewsProps) {
   return (
     <div class={'flex flex-col gap-4'}>
-      <div class={'text-xl text-center font-medium'}>
+      <Title>
         { title }
-      </div>
+      </Title>
       <div class={'flex flex-col gap-4'}>
         { reviews.map(review => (
           <ReviewItem key={review.title} {...review} />

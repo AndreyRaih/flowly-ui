@@ -11,7 +11,7 @@ type ImagePickerProps<T> = {
 
 export function ImagePicker<T>({ title, ...optionsProps }: ImagePickerProps<T>) {
   return (
-    <div class={'max-w-sm flex flex-col gap-6'}>
+    <div class={'max-w-sm mx-auto flex flex-col gap-6'}>
       <Title>
         { title }
       </Title>

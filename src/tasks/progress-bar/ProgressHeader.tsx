@@ -6,7 +6,7 @@ const Counter = ({ current, total }: {
   total: number;
 }) => {
   return (
-    <div class='flex gap-0.5 text-lg font-medium'>
+    <div class='flex gap-0.5 text-md font-medium'>
       <span class='text-red-350'>
         { current }
       </span>
@@ -32,7 +32,7 @@ export const ProgressHeader = ({ title, onGoBack, hasCounter, current, total }: 
           <BackIcon class='cursor-pointer' onClick={() => onGoBack()} />
         ) }
       </div>
-      <div class={'text-lg font-medium'} style={{ maxWidth: 'calc(100% - 120px)' }}>
+      <div class={'text-md font-medium'} style={{ maxWidth: 'calc(100% - 120px)' }}>
         { title }
       </div>
       <div class={'absolute right-0'}>

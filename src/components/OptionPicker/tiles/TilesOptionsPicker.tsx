@@ -8,7 +8,7 @@ type TileOptionData = {
 
 export { type TileOption };
 
-export function TilesOptionsPicker<T>(props: OptionsPickerProps<T, TileOptionData>) {
+export function TilesOptionsPicker<T>({ itemClass, ...props }: OptionsPickerProps<T, TileOptionData>) {
   return (
     <div class={'flex flex-wrap gap-4 justify-center'}>
       <OptionsContainer {...props}>
@@ -19,6 +19,7 @@ export function TilesOptionsPicker<T>(props: OptionsPickerProps<T, TileOptionDat
               selected={selected}
               onSelect={onSelect}
               checkbox={props.isMultiple}
+              className={itemClass}
             />
           </div>
         ) }

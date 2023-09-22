@@ -19,9 +19,11 @@ export function PictureSelectLayout({ title, pictureUrl, ...rest }: PictureSelec
         { title }
       </Title>
       <div class={'flex gap-6'}>
-        <img class={'max-w-[50%]'} src={pictureUrl} alt={title} />
-        <div class={'flex-1 pt-[50px]'}>
-          <ListOptionsPicker {...rest} />
+        <div class={'flex-[10]'}>
+          <img class={'max-w-[100%]'} src={pictureUrl} alt={title} />
+        </div>
+        <div class={'flex-[8] pt-[50px]'}>
+          <ListOptionsPicker itemClass='text-center' {...rest} />
         </div>
       </div>
     </div>
