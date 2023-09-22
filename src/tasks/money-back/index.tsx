@@ -17,7 +17,7 @@ export function MoneyBackComponent({ title, text }: MoneyBackProps) {
         <Title>
           { title }
         </Title>
-        <div class={'text-sm text-center'}>
+        <div class={'text-sm text-center leading-normal'}>
           { text }
         </div>
       </div>

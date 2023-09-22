@@ -12,18 +12,20 @@ export function PlanPicker({ title, defaultPlan, plans, value, onUpdate }: PlanP
   const selectedPlan = value ?? defaultPlan;
 
   return (
-    <div class='flex flex-col gap-5'>
+    <div class='flex flex-col gap-6'>
       <Title>
         { title }
       </Title>
-      { plans.map(plan => (
-        <PlanItem 
-          key={plan.id} 
-          plan={plan}
-          selected={plan.id === selectedPlan}
-          onSelect={() => onUpdate(plan.id)}
-        />
-      )) }
+      <div class='flex flex-col gap-4'>
+        { plans.map(plan => (
+          <PlanItem 
+            key={plan.id} 
+            plan={plan}
+            selected={plan.id === selectedPlan}
+            onSelect={() => onUpdate(plan.id)}
+          />
+        )) }
+      </div>
     </div>
   );
 }

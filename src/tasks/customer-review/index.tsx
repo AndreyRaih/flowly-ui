@@ -25,7 +25,7 @@ const Review = ({ author, text, date, rate }: CustomerReviewProps['review']) => 
           { date }
         </div>
       </div>
-      <div class={'text-blue-900'}>
+      <div class={'text-blue-900 leading-[16px]'}>
         { text }
       </div>
     </div>
@@ -38,13 +38,13 @@ export function CustomerReview({
   review,
 }: CustomerReviewProps) {
   return (
-    <div class={'flex flex-col gap-5 max-w-sm mx-auto'}>
-      <Title>
+    <div class={'flex flex-col gap-5'}>
+      <Title class={'mb-1'}>
         { title }
       </Title>
 
       <div class={''}>
-        <img src={imgUrl} alt={`${review.author}`} class={'rounded-sm overflow-hidden object-contain'} />
+        <img src={imgUrl} alt={`${review.author}`} class={'rounded-sm overflow-hidden object-contain mx-auto'} />
       </div>
 
       <Review {...review} />

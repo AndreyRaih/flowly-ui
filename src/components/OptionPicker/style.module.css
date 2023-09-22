@@ -1,6 +1,7 @@
 .option {
   @apply rounded-md overflow-hidden bg-gray-100 cursor-pointer;
   
+  line-height: normal;
   border: 1.5px solid transparent;
   transition: border-color .1s;
 }
