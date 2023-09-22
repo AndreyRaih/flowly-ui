@@ -9,9 +9,10 @@ export interface TileOption<T> extends Option<T> {
   image: string
 }
 
-export function TileItem<T> ({ option, selected, onSelect }: {
+export function TileItem<T> ({ option, selected, onSelect, checkbox }: {
   option: TileOption<T>
   selected?: boolean
+  checkbox?: boolean
   onSelect: () => void
 }) {
   const { image, value, label = value } = option;
@@ -21,7 +22,7 @@ export function TileItem<T> ({ option, selected, onSelect }: {
     <div class={cls} onClick={() => onSelect()}>
       <div class={'aspect-square bg-cover bg-center'} style={{ backgroundImage: `url(${image})` }} />
       <div class={'flex gap-1 items-center justify-center p-2 text-sm font-medium text-center'}>
-        <Checkbox cls={s.checkbox} size={20} checked={selected} />
+        { checkbox && <Checkbox cls={s.checkbox} size={20} checked={selected} /> }
         { label }
       </div>
     </div>

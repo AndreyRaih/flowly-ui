@@ -1,11 +1,11 @@
 /* eslint-disable max-lines */
 import { getAssetUrl } from '@/utils/handleAssets';
-import { asActionable } from './decorators';
+import { asActionable } from '../decorators';
 import { Select } from '@/tasks/select';
 
 
 export default {
-  title: 'Components/ListOptionPicker',
+  title: 'Components/OptionPicker/List',
   component: asActionable(Select),
   argTypes: {
     onUpdate: { action: 'onUpdate' },
